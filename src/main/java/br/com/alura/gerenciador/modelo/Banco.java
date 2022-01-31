@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import br.com.alura.gerenciador.acao.Usuario;
+
 public class Banco {
 	
 	private static List<Empresa> listaEmpresas = new ArrayList<Empresa>();
+	private static List<Usuario> listaUsuarios = new ArrayList<Usuario>();
 	
 	private static Integer chaveSequencial = 1;
 	
@@ -20,6 +23,18 @@ public class Banco {
 		empresa2.setNome("Caelum");
 		Banco.listaEmpresas.add(empresa);
 		Banco.listaEmpresas.add(empresa2);
+		
+		Usuario u1 = new Usuario();
+		u1.setLogin("edilberto");
+		u1.setSenha("12345");
+		
+		Usuario u2 = new Usuario();
+		u2.setLogin("Nico");
+		u2.setSenha("12345");
+		
+		listaUsuarios.add(u1);
+		listaUsuarios.add(u2);
+		
 	} //  <- simulando um banco de dados 
 
 	public void adiciona(Empresa empresa) {
@@ -48,6 +63,15 @@ public class Banco {
 				return empresa;
 			}
 			
+		}
+		return null;
+	}
+
+	public Usuario existeUsuario(String login, String senha) {
+		for(Usuario usuario : listaUsuarios) {
+			if(usuario.ehIgual(login, senha)) {
+				return usuario;
+			}
 		}
 		return null;
 	}	

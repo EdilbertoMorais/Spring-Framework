@@ -13,7 +13,6 @@ public class Banco {
 	
 	private static Integer chaveSequencial = 1;
 	
-	//simulando um banco de dados ->
 	static {
 		Empresa empresa = new Empresa();
 		empresa.setId(chaveSequencial++);
@@ -35,7 +34,7 @@ public class Banco {
 		listaUsuarios.add(u1);
 		listaUsuarios.add(u2);
 		
-	} //  <- simulando um banco de dados 
+	} 
 
 	public void adiciona(Empresa empresa) {
 		empresa.setId(Banco.chaveSequencial++);	

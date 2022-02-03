@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 //oi
 @WebServlet (urlPatterns = "/oi") // -> chamado de mapeamento servlet URL que responde ao chamado do servlet
 public class OiMundoServlet extends HttpServlet{
-	private static final long serialVersionUID = 1L;
 	
 	@Override
 	public void service(ServletRequest req, ServletResponse resp) throws IOException {
